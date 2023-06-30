@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "prototipo"
+version = "0.1.0"
+description = ""
+authors = ["Alisson <alissonfilipe937@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+Django = "^4.2.2"
+pika = "^1.3.2"
+djangorestframework = "^3.14.0"
+Flask = "^2.3.2"
+Flask-SQLAlchemy = "^3.0.5"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
