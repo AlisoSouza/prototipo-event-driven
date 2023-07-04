@@ -47,5 +47,5 @@ def create_chats(request, uuid):
     context = {
         "project": project
     }
-    project.create_chats("Setor teste")
+    project.create_chats("Chats")
     return redirect(reverse('project:project', args=[project.uuid]))

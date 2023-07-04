@@ -17,11 +17,5 @@
         Created on: {{ project.created_on|date:"d/m/Y" }} 
         {{project.created}}
     </p>
-
-    {% if not project.template_type%}
-    <a href="{% url 'project:create_chats' project.uuid %}">
-        <button>Integrar chats</button>
-    </a>
-    {% endif %}
 </body>
 </html>

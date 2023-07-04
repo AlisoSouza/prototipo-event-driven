@@ -33,12 +33,12 @@ class Project(models.Model):
             "template_type": self.template_type
         }
 
-        publish(body, channel)
+        publish(body, channel, routing_key="create")
         # channel.basic_publish(exchange='project.topic', routing_key="", body=json.dumps(body))
         return super().save(force_insert, force_update, using, update_fields)
 
     def create_chats(self, sector_name):
-
-        publish({"uuid": str(self.uuid), "sector": sector_name}, channel, routing_key="sector")
+        body = {"uuid": str(self.uuid), "sector": sector_name}
+        publish(body, channel, routing_key="sector")
         return True
 

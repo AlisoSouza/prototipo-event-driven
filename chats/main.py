@@ -55,7 +55,7 @@ def consumer(ch, method, properties, body):
         if template_type == "support":
             log("Criando setor")
         elif template_type == "lead_capture:chat_gpt":
-            log("Ignora")
+            ...
 
     ch.basic_ack(delivery_tag=method.delivery_tag)
 
@@ -67,6 +67,6 @@ if __name__ == "__main__":
     channel.basic_consume(queue='chats', on_message_callback=consumer)
 
     # Inicia o consumidor em segundo plano
-    print("Chats aguardando mensagens...")
+    print("\033[92m[+] (FLASK) Chats aguardando eventos...")
     channel.start_consuming()
     # migrate()
